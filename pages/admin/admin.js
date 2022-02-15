@@ -67,7 +67,7 @@ Page({
       console.log(this.data.imgPreview)
       for(let i=0;i<myThis.data.imgPreview.length;i++){
         tt.uploadFile({
-          url: 'https://www.fengzigeng.com/api/miniapp/uploadimg',
+          url: 'http://139.9.86.70:8080/miniapp/uploadimg',
           filePath: myThis.data.imgPreview[i],
           name: 'image',
           success (res) {
@@ -80,7 +80,7 @@ Page({
                   if(i==myThis.data.imgPreview.length-1){//finish uploading
                     upForm['image']=imgArr;
                     tt.request({
-                      url: 'https://www.fengzigeng.com/api/miniapp/BulkAddFound', // 目标服务器url
+                      url: 'http://139.9.86.70:8080/miniapp/BulkAddFound', // 目标服务器url
                       header:{
                         'Content-Type': 'application/x-www-form-urlencoded'
                       },
@@ -221,7 +221,7 @@ Page({
       let myThis=this;
       tt.request({
         //获取地点列表
-        url: 'https://www.fengzigeng.com/api/miniapp/getplaces', // 目标服务器url
+        url: 'http://139.9.86.70:8080/miniapp/getplaces', // 目标服务器url
         header:{
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -285,7 +285,7 @@ Page({
     //         multiIndex4: e.detail.value
     //     })
     // },
-    bindMultiPickerColumnChange1: function (e) {
+    bndMultiPickerColumnChange1: function (e) {
         // return;
         console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
         var data = {
@@ -311,39 +311,14 @@ Page({
         }
         this.setData(data);
       },
-    bindMultiPickerColumnChange2: function (e) {
-        // return;
-        console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-        var data = {
-            multiArray2: this.data.multiArray2,
-            multiIndex2: this.data.multiIndex2
-        };
-        switch (e.detail.column) {
-            case 0:
-                data.multiIndex2[0] = e.detail.value;
-                data.multiIndex2[1] = 0;
-                // data.multiIndex2[2] = 0;
-                data.multiArray2[1] = ms2[1][data.multiIndex2[0]];
-                // data.multiArray[2] = ms[2][data.multiIndex[0]][data.multiIndex[1]];
-                break;
-            case 1:
-                data.multiIndex2[1] = e.detail.value;
-                // data.multiIndex2[2] = 0;
-                // data.multiArray[2] = ms[2][data.multiIndex[0]][data.multiIndex[1]];
-                break;
-            case 2:
-                // data.multiIndex[2] = e.detail.value;
-                break;
-        }
-        this.setData(data);
-      },
+    
 
       onLoad: function (options) {
         let myThis=this;
       // 生命周期函数--监听页面加载
       tt.request({
         //获取物品列表
-        url: 'https://www.fengzigeng.com/api/miniapp/gettypes', // 目标服务器url
+        url: 'http://139.9.86.70:8080/miniapp/gettypes', // 目标服务器url
         header:{
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -372,7 +347,7 @@ Page({
 
       tt.request({
         //获取地点列表
-        url: 'https://www.fengzigeng.com/api/miniapp/getplaces', // 目标服务器url
+        url: 'http://139.9.86.70:8080/miniapp/getplaces', // 目标服务器url
         header:{
           'Content-Type': 'application/x-www-form-urlencoded'
         },

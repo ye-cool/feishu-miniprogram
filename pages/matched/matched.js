@@ -35,7 +35,7 @@ Page({
             });
         }
         tt.request({
-          url: 'https://www.fengzigeng.com/api/miniapp/thanks', // 目标服务器url
+          url: 'http://139.9.86.70:8080/miniapp/thanks', // 目标服务器url
           header:{
             'Content-Type': 'application/x-www-form-urlencoded'
           },
@@ -75,7 +75,7 @@ Page({
                 success: (res) => {
                     if(res.confirm){
                         tt.request({
-                          url: 'https://www.fengzigeng.com/api/miniapp/claim', // 目标服务器url
+                          url: 'http://139.9.86.70:8080/miniapp/claim', // 目标服务器url
                           header:{
                             'Content-Type': 'application/x-www-form-urlencoded'
                           },
@@ -122,7 +122,7 @@ Page({
                 success: (res) => {
                     if(res.confirm){
                         tt.request({
-                          url: 'https://www.fengzigeng.com/api/miniapp/claim', // 目标服务器url
+                          url: 'http://139.9.86.70:8080/miniapp/claim', // 目标服务器url
                           header:{
                             'Content-Type': 'application/x-www-form-urlencoded'
                           },

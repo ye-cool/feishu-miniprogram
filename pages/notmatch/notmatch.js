@@ -15,7 +15,7 @@ Page({
           success: (res) => {
             if(res.confirm){
                 tt.request({
-                  url: 'https://www.fengzigeng.com/api/miniapp/foundBySelf', // 目标服务器url
+                  url: 'http://139.9.86.70:8080/miniapp/foundBySelf', // 目标服务器url
                   method: 'POST',
                   header:{
                     'Content-Type': 'application/x-www-form-urlencoded'

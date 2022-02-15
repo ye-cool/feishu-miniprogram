@@ -3,51 +3,58 @@
 		<view class="lost-picker-container">
 			<view class="lost-picker-title">失物查询</view>
 			<image src="../../assets/help.png" class="help" bindtap="goHelp"></image>
-			<picker value="{{index}}" range="{{array}}"
-    			class="picker-container0" bindchange="bindPickerChange" bindcancel="bindPickerCancel">
-  				<view class="picker0">
-    				{{array[index]}}⇌
-					
-  				</view>
+			<picker value="{{index}}" range="{{array}}" class="picker-container0" bindchange="bindPickerChange" bindcancel="bindPickerCancel">
+				<view class="picker0">
+					{{array[index]}}⇌
+
+				</view>
 			</picker>
 			<view class="lost-picker-subtitle">可根据以下条件筛选查询</view>
-			
-					
+
+
 		</view>
-<view class="picker-flex-container">
-			<picker mode="multiSelector"
-			class="picker-container"
-    		bindchange="bindMultiPickerChange"
-    		bindcolumnchange="bindMultiPickerColumnChange"
-    		value="{{multiIndex}}" range="{{multiArray}}">
-  				<view class="picker1">
+		<view class="picker-flex-container">
+			<picker mode="multiSelector" class="picker-container" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+				<view class="picker1">
 					<text>{{multiArray[1][multiIndex[1]]}}</text>
 					<p class="arrow"> </p>
-  				</view>
+				</view>
 			</picker>
-				<picker mode="multiSelector"
-				class="picker-container2"
-    			bindchange="bindMultiPickerChange2"
-    			bindcolumnchange="bindMultiPickerColumnChange2"
-    			value="{{multiIndex2}}" range="{{multiArray2}}">
-  					<view class="picker2">
-						<text>{{multiArray2[1][multiIndex2[1]]}}</text>
-						<p class="arrow"> </p>
-  					</view>
-				</picker>	
-				<picker class="picker-container3" mode="date" value="{{date}}" start="2021-01-01" end="2022-09-01"
-    				bindchange="bindDateChange" fields="day">
-  					<view class="picker3">
-    					 {{dateShow}}<p class="arrow"> </p>
-  					</view>
-				</picker>			
+			<picker mode="multiSelector" class="picker-container2" bindchange="bindMultiPickerChange2" bindcolumnchange="bindMultiPickerColumnChange2" value="{{multiIndex2}}" range="{{multiArray2}}">
+				<view class="picker2">
+					<text>{{multiArray2[1][multiIndex2[1]]}}</text>
+					<p class="arrow"> </p>
+				</view>
+			</picker>
+			<picker class="picker-container3" mode="date" value="{{start_time}}" start="2021-01-01" end="2022-09-01" bindchange="bindDateChange1" fields="day">
+				<view class="picker3">
+					{{start_timeShow}}
+					<p class="arrow"> </p>
+				</view>
+			</picker>
+			<view class="to-container">
+				<span class="to">
+					至
+				</span>
 			</view>
-		<view  class="lost-list">
+
+			<picker class="picker-container4" mode="date" value="{{end_time}}" start="2021-01-01" end="2022-09-01" bindchange="bindDateChange2" fields="day">
+				<view class="picker4">
+					{{end_timeShow}}
+					<p class="arrow"> </p>
+				</view>
+			</picker>
+		</view>
+		<view class="lost-list">
 			<view tt:key="{{index}}" bindtap="handleLostTab" id="{{index}}" tt:for="{{lost}}" class="lost-container">
 				<image class="lost-img" src="{{item.Image}}" mode="aspectFill"></image>
 				<p style="margin-top:8px" class="lost-info">物品种类：{{item.SubType}}</p>
-				<p class="sub-lost-info"><image class="icon" src="../../assets/pos.png"></image>{{item.Place}}</p>
-				<p class="sub-lost-info"><image class="icon" src="../../assets/date.png"></image>{{item.FoundDate}}</p>
+				<p class="sub-lost-info">
+					<image class="icon" src="../../assets/pos.png"></image>{{item.Place}}
+				</p>
+				<p class="sub-lost-info">
+					<image class="icon" src="../../assets/date.png"></image>{{item.FoundDate}}
+				</p>
 			</view>
 		</view>
 
@@ -55,7 +62,7 @@
 		<!-- <button bindtap="getCode" type="primary">获取code</button> -->
 		<button bindtap="postLostConfirm" class="post-lost-btn" type="primary">发布失物查询</button>
 
-	</view> 
+	</view>
 
 
 </view>

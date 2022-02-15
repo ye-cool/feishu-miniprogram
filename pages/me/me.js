@@ -13,7 +13,7 @@ Page({
         console.log(e.currentTarget.dataset.foundid);
         console.log(e.currentTarget.dataset.ismatch);
         tt.request({
-            url: 'https://www.fengzigeng.com/api/miniapp/me', // 目标服务器url
+            url: 'http://139.9.86.70:8080/miniapp/me', // 目标服务器url
             method: 'POST',
             header:{
               'Content-Type': 'application/x-www-form-urlencoded'
@@ -49,7 +49,7 @@ Page({
         }
 
         tt.request({
-          url: 'https://www.fengzigeng.com/api/miniapp/me', // 目标服务器url
+          url: 'http://139.9.86.70:8080/miniapp/me', // 目标服务器url
           method: 'POST',
           header:{
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -81,7 +81,7 @@ Page({
       // Do something when page show.
       let myThis=this;
       tt.request({
-        url: 'https://www.fengzigeng.com/api/miniapp/me', // 目标服务器url
+        url: 'http://139.9.86.70:8080/miniapp/me', // 目标服务器url
         method:'GET',
         success: (res) => {
           if(res.data.code==200){
@@ -108,7 +108,7 @@ Page({
             }
         })
         tt.request({
-          url: 'https://www.fengzigeng.com/api/miniapp/me', // 目标服务器url
+          url: 'http://139.9.86.70:8080/miniapp/me', // 目标服务器url
           method:'GET',
           success: (res) => {
             if(res.data.code==200){

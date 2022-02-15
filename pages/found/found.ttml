@@ -1,70 +1,71 @@
 <view class="page">
-    <view class="title-container">
-        <view class="title">发布招领信息</view>
-        <span>感谢您的热心帮助，请填写以下表单，我们将和您一起找到失主</span>
-    </view>
-    <view class="form">
-        <picker
-        style="margin-bottom:12px" 
-        class="picker1-content"
-        mode="multiSelector"
-    	bindchange="bindMultiPickerChange1"
-    	bindcolumnchange="bindMultiPickerColumnChange1"
-    	value="{{multiIndex1}}" range="{{multiArray1}}">
-            <p class="sub-title" style="margin-left:15px;font-size:20px">物品种类</p>
-  			<view class="picker1">
-                <text style="margin-left:15px">{{multiArray1[1][multiIndex1[1]]}}</text>
-                <p class="arrow"> </p>
-  			</view>
-		</picker>
-        <input class="input" placeholder="详细描述" bindinput="handelTypeDetail"></input>
-        <p class="sub-title" style="margin-left:15px;font-size:20px">拾取地点</p>
-        <radio-group class="radio-group" bindchange="radioChange">
-            <label class="page-cell page-check__label" tt:for="{{items}}" tt:key="{{item.value}}">
-                <view class="page-cell__hd">
-                <radio value="{{item.value}}"
-                    checked="{{item.checked}}"/>
-                </view>
-                <view class="page-cell__bd">{{item.name}}</view>
-            </label>
-        </radio-group>
-        <picker 
-        class="picker1-content"
-        mode="multiSelector"
-    	bindchange="bindMultiPickerChange2"
-    	bindcolumnchange="bindMultiPickerColumnChange2"
-    	value="{{multiIndex2}}" range="{{multiArray2}}">
-  			<view class="picker1">
-                <text style="margin-left:15px">{{multiArray2[0][multiIndex2[0]]}}，{{multiArray2[1][multiIndex2[1]]}}</text>
-                <p class="arrow"> </p>
-  			</view>
-		</picker>
-        <input class="input" placeholder="详细描述" bindinput="handelPlaceDetail"></input>
-        <p class="sub-title" style="margin-left:15px;font-size:20px">相关图片</p>
-        <button class="submit-btn" bindtap="handleUpload" >上传图片</button>
-        <view class="img-preview">
-            <image mode="aspectFill" bindtap="handleDelImg" tt:for="{{imgPreview}}" src="{{item}}" id={{index}}></image>
-        </view>
-        <p class="sub-title" style="margin-left:15px;font-size:20px">身份信息</p>
-        <input class="input" placeholder="（可选）失主姓名" bindinput="handelIdentify"></input>
-        <p class="sub-title" style="margin-left:15px;font-size:20px">当前位置</p>
-        
-        <view class="now-pos">      
-            <view class="now-pos-radio page-cells page-cells_after-title">
-                <radio-group  bindchange="radioChange2">
-                    <label class="page-cell page-check__label" tt:for="{{items2}}" tt:key="{{item.value}}">
-                        <view class="page-cell__hd">
-                        <radio value="{{item.value}}"
-                            checked="{{item.checked}}"/>
-                        </view>
-                        <view class="page-cell__bd">{{item.name}}</view>
-                    </label>
-                 </radio-group>
-            </view>
-        </view>
-        <input tt:if="{{ratioVal2==2}}" class="input" placeholder="失物现在位置" bindinput="handelOtherPlace"></input>
-        <p class="sub-title" style="margin-left:15px;font-size:20px;">补充信息</p>
-        <input class="input" placeholder="（可选）" bindinput="moreInfo"></input>
-        <button class="submit-btn" bindtap="submit" type="primary">提交</button>
-    </view>
+	<view class="title-container">
+		<view class="title">发布招领信息</view>
+		<span>感谢您的热心帮助，请填写以下表单，我们将和您一起找到失主</span>
+	</view>
+
+	<view class="form">
+		<scroll-view style="height:100vh" scroll-y="true" scroll-with-animation="true" scroll-into-view="{{ toView }}">
+			<view id="demo1">
+				<picker style="margin-bottom:12px" class="picker1-content" mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bidMultiPickerColumnChange1" value="{{multiIndex1}}" range="{{multiArray1}}">
+					<p class="sub-title" style="margin-left:15px;font-size:20px">物品种类</p>
+					<view class="picker1">
+						<text style="margin-left:15px">{{multiArray1[1][multiIndex1[1]]}}</text>
+						<p class="arrow"> </p>
+					</view>
+				</picker>
+				<input class="input" placeholder="详细描述" bindinput="handelTypeDetail"></input>
+			</view>
+			<view id="demo2">
+				<p class="sub-title" style="margin-left:15px;font-size:20px">拾取地点</p>
+				<radio-group class="radio-group" bindchange="radioChange">
+					<label class="page-cell page-check__label" tt:for="{{items}}" tt:key="{{item.value}}">
+						<view class="page-cell__hd">
+							<radio value="{{item.value}}" checked="{{item.checked}}" />
+						</view>
+						<view class="page-cell__bd">{{item.name}}</view>
+					</label>
+				</radio-group>
+				<picker class="picker1-content" mode="multiSelector" bindchange="bindMultiPickerChange2" bindcolumnchange="bidMultiPickerColumnChange2" value="{{multiIndex2}}" range="{{multiArray2}}">
+					<view class="picker1">
+						<text style="margin-left:15px">{{multiArray2[0][multiIndex2[0]]}}，{{multiArray2[1][multiIndex2[1]]}}</text>
+						<p class="arrow"> </p>
+					</view>
+				</picker>
+				<input class="input" placeholder="详细描述" bindinput="handelPlaceDetail"></input>
+			</view>
+			<view id="demo3">
+				<p class="sub-title" style="margin-left:15px;font-size:20px">相关图片</p>
+				<button class="submit-btn" bindtap="handleUpload">上传图片</button>
+				<view class="img-preview">
+					<image mode="aspectFill" bindtap="handleDelImg" tt:for="{{imgPreview}}" src="{{item}}" id={{index}}></image>
+				</view>
+			</view>
+			<view id="demo4">
+				<p class="sub-title" style="margin-left:15px;font-size:20px">身份信息</p>
+				<input class="input" placeholder="（可选）失主姓名" bindinput="handelIdentify"></input>
+			</view>
+			<view id="demo5">
+				<p class="sub-title" style="margin-left:15px;font-size:20px">当前位置</p>
+				<view class="now-pos">
+					<view class="now-pos-radio page-cells page-cells_after-title">
+						<radio-group bindchange="radioChange2">
+							<label class="page-cell page-check__label" tt:for="{{items2}}" tt:key="{{item.value}}">
+								<view class="page-cell__hd">
+									<radio value="{{item.value}}" checked="{{item.checked}}" />
+								</view>
+								<view class="page-cell__bd">{{item.name}}</view>
+							</label>
+						</radio-group>
+					</view>
+				</view>
+				<input tt:if="{{ratioVal2==2}}" class="input" placeholder="失物现在位置" bindinput="handelOtherPlace"></input>
+			</view>
+			<view id="demo6">
+				<p class="sub-title" style="margin-left:15px;font-size:20px;">补充信息</p>
+				<input class="input" placeholder="（可选）" bindinput="moreInfo"></input>
+				<button class="submit-btn" bindtap="submit" type="primary" disabled='{{isSubmit}}'>提交</button>
+			</view>
+		</scroll-view>
+	</view>
 </view>

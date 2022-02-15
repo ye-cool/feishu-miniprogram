@@ -48,14 +48,17 @@ page{
   /* width: 100px; */
 }
 .picker-container{
-  width: 30%;
+  width: 23%;
   border-radius: 5px;
 }
 .picker-container2{
-  width: 30%;
+  width: 23%;
 }
 .picker-container3{
-  width: 30%;
+  width: 23%;
+}
+.picker-container4{
+  width: 23%;
 }
 
 .picker-flex-container{
@@ -81,7 +84,7 @@ page{
 }
 
 .picker1{
-  font-size: 16px;
+  font-size: 14px;
   height: 40px;
   line-height: 40px;
   border-top-left-radius: 5px;
@@ -92,7 +95,7 @@ page{
   position: relative;
 }
 .picker2{
-  font-size: 16px;
+  font-size: 14px;
   height: 40px;
   line-height: 40px;
   background-color: white;
@@ -101,12 +104,32 @@ page{
   position: relative;
 }
 .picker3{
-  font-size: 16px;
+  font-size: 14px;
   height: 40px;
   line-height: 40px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: white;
+  text-align: center;
+  position: relative;
+}
+.picker4{
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+}
+.to-container{
+  width: 5%;
+}
+.to{
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   position: relative;
 }
